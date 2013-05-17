@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="/js/async_storage.js"></script>
+<script src="/js/main.js"></script>
+</head>
+<body>
+<h3>localStorage</h3>
+<button onclick="writeLS(prompt('Enter value'))">Store</button>
+<button onclick="readLS(alert)">Fetch</button>
+<br/>
+<h3>WebSQL</h3>
+<button onclick="writeWSQL(prompt('Enter value'))">Store</button>
+<button onclick="readWSQL(alert)">Fetch</button>
+<br/>
+<h3>IndexedDB</h3>
+<button onclick="writeIDB(prompt('Enter value'))">Store</button>
+<button onclick="readIDB(alert)">Fetch</button>
+</body>
+</html>

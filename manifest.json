@@ -1,0 +1,16 @@
+{
+  "AppDescription": {
+    "en": "A test application to check localStorage/WebSQL/IndexedDB"
+  },
+  "AppName": {
+    "en": "Spotify Apps Storage Test"
+  },
+  "BundleIdentifier": "storage-test",
+  "BundleType": "Application",
+  "BundleVersion": "0.1",
+  "Dependencies": {},
+  "SupportedLanguages": [
+    "en"
+  ],
+  "VendorIdentifier": "dnc"
+}
