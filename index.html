@@ -6,15 +6,19 @@
 </head>
 <body>
 <h3>localStorage</h3>
-<button onclick="writeLS(prompt('Enter value'))">Store</button>
+<button onclick="writeLS(document.getElementById('ls').value)">Store</button>
+<input id="ls" />
+<br />
 <button onclick="readLS(alert)">Fetch</button>
-<br/>
 <h3>WebSQL</h3>
-<button onclick="writeWSQL(prompt('Enter value'))">Store</button>
+<button onclick="writeWSQL(document.getElementById('wsql').value)">Store</button>
+<input id="wsql" />
+<br />
 <button onclick="readWSQL(alert)">Fetch</button>
-<br/>
 <h3>IndexedDB</h3>
-<button onclick="writeIDB(prompt('Enter value'))">Store</button>
+<button onclick="writeIDB(document.getElementById('idb').value)">Store</button>
+<input id="idb" />
+<br />
 <button onclick="readIDB(alert)">Fetch</button>
 </body>
 </html>

@@ -10,15 +10,15 @@ function writeWSQL(x) {
     alert('WebSQL DB creation failed');
     return;
   }
-  onError = function(tx, e) {
+  var onError = function(tx, e) {
     alert('WebSQL error: ' + e.message);
   };
   db.transaction(function(tx) {
-    var sql = 'CREATE TABLE IF NOT EXISTS table (id INTEGER PRIMARY KEY AUTOINCREMENT, text TEXT)';
+    var sql = 'CREATE TABLE IF NOT EXISTS tbl (id INTEGER PRIMARY KEY AUTOINCREMENT, text TEXT)';
     tx.executeSql(sql, [], null, onError);
   }, onError, null);
   db.transaction(function(tx) {
-    var sql = 'INSERT INTO table(text) VALUES(?)';
+    var sql = 'INSERT INTO tbl(text) VALUES(?)';
     tx.executeSql(sql, [x], null, onError);
   }, onError, null);
 }
@@ -37,21 +37,21 @@ function readWSQL(callback) {
     alert('WebSQL DB creation failed');
     return;
   }
-  onError = function(tx, e) {
+  var onError = function(tx, e) {
     alert('WebSQL error: ' + e.message);
   };
   db.transaction(function(tx) {
-    var sql = 'CREATE TABLE IF NOT EXISTS table (id INTEGER PRIMARY KEY AUTOINCREMENT, text TEXT)';
+    var sql = 'CREATE TABLE IF NOT EXISTS tbl (id INTEGER PRIMARY KEY AUTOINCREMENT, text TEXT)';
     tx.executeSql(sql, [], null, onError);
   }, onError, null);
   db.transaction(function(tx) {
-    var sql = 'SELECT * FROM table';
+    var sql = 'SELECT * FROM tbl';
     tx.executeSql(sql, [], function(tx, results) {
       if (results.rows.length == 0) {
         alert('Zero rows');
 	return false;
       }
-      callback(results.rows.item(results.rows.length - 1));
+      callback(results.rows.item(results.rows.length - 1).text);
     }, onError);
   }, onError, null);
 }
